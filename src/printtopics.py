@@ -23,11 +23,6 @@ import numpy
 import onlineldainit
 
 def main():
-    """
-    Displays topics fit by onlineldavb.py. The first column gives the
-    (expected) most prominent words in the topics, the second column
-    gives their (expected) relative prominence.
-    """
     vocab = str.split(file('vocaball.txt').read())
     testlambda = numpy.loadtxt(sys.argv[1])
     for k in range(0, len(testlambda)):
