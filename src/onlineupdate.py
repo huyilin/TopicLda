@@ -39,8 +39,8 @@ def main():
     D = 3.3e6
     K = 100 # number of topics
     documentstoanalyze=38; # number of batches
-    file1=open('/home/yilin/workspace/topicmodel/onlineldavb/city-lda-vector.txt','w').close()
-    file1=open('/home/yilin/workspace/topicmodel/onlineldavb/city-lda-vector.txt','a')
+    file1=open('../city-lda-vector.txt','w').close()
+    file1=open('../city-lda-vector.txt','a')
     vocab = file('./vocaball.txt').readlines()
     W = len(vocab)
     olda=onlineldaupdate.OnlineLDA(vocab)
@@ -76,3 +76,4 @@ def main():
 if __name__ == '__main__':
     main()
     
+

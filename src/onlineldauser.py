@@ -18,7 +18,8 @@
 
 import sys, re, time, string
 import numpy as n
-from scipy.special import gammaln, psi
+#from scipy.special import gammaln, psi
+from compute import gammaln,psi
 
 n.random.seed(100000001)
 meanchangethresh = 0.001
@@ -111,16 +112,17 @@ class OnlineLDA:
             word = re.sub(r'[^a-z]', '', word)
             self._vocab[word] = len(self._vocab)
         self._W = len(self._vocab)
-        self._K = n.loadtxt('../data/newvocab100/K.dat')
-        self._D = n.loadtxt('../data/newvocab100/D.dat')
-        self._alpha = n.loadtxt('../data/newvocab100/alpha.dat')
-        self._eta = n.loadtxt('../data/newvocab100/eta.dat')
-        self._tau0 = n.loadtxt('../data/newvocab100/tau0.dat')
-        self._kappa = n.loadtxt('../data/newvocab100/kappa.dat')
-        self._updatect = n.loadtxt('../data/newvocab100/updatect.dat')
-        self._lambda = n.loadtxt('../data/newvocab100/lambda.dat')
-        self._Elogbeta = n.loadtxt('../data/newvocab100/Elogbeta.dat')
-        self._expElogbeta =n.loadtxt('../data/newvocab100/expElogbeta.dat')
+        self._K = n.loadtxt('../data/K.dat')
+        self._D = n.loadtxt('../data/D.dat')
+        self._alpha = n.loadtxt('../data/alpha.dat')
+        self._eta = n.loadtxt('../data/eta.dat')
+        self._tau0 = n.loadtxt('../data/tau0.dat')
+        self._kappa = n.loadtxt('../data/kappa.dat')
+        self._updatect = n.loadtxt('../data/updatect.dat')
+        self._lambda = n.loadtxt('../data/lambda.dat')
+        self._Elogbeta = n.loadtxt('../data/Elogbeta.dat')
+        self._expElogbeta =n.loadtxt('../data/expElogbeta.dat')
+        print "finished importing"
 
     def do_e_step(self, docs):
         """
